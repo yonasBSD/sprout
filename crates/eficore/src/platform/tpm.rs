@@ -38,6 +38,15 @@ impl PlatformTpm {
     /// The PCR for measuring the bootloader configuration into.
     pub const PCR_BOOT_LOADER_CONFIG: PcrIndex = PcrIndex(5);
 
+    /// The PCR for measuring the dom0 initrd payload into.
+    pub const PCR_INITRD: PcrIndex = PcrIndex(9);
+
+    /// The PCR for measuring the dom0 kernel payload into.
+    pub const PCR_KERNEL: PcrIndex = PcrIndex(11);
+
+    /// The PCR for measuring kernel command line and xen options into.
+    pub const PCR_KERNEL_PARAMETERS: PcrIndex = PcrIndex(12);
+
     /// Acquire access to the TPM protocol handle, if possible.
     /// Returns None if TPM is not available.
     fn protocol() -> Result<Option<TpmProtocolHandle>> {
